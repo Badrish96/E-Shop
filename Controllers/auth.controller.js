@@ -34,8 +34,10 @@ exports.signup = async (req, res) => {
   }
   //Creating User Object
   const userObj = {
+    userId: req.body.userId,
     firstName: req.body.firstName,
     lastName: req.body.lastName,
+    userRole: req.body.userRole,
     email: req.body.email,
     password: hashedPass,
     phoneNumber: req.body.phoneNumber,
@@ -45,8 +47,10 @@ exports.signup = async (req, res) => {
   try {
     const userCreated = await User.create(userObj);
     const postResponse = {
+      userId: userCreated.userId,
       firstName: userCreated.firstName,
       lastName: userCreated.lastName,
+      userRole: userCreated.userRole,
       email: userCreated.email,
       phoneNumber: userCreated.phoneNumber,
     };
@@ -75,7 +79,7 @@ exports.signin = async (req, res) => {
     });
   }
 
-  const token = jwt.sign({ role: user.role }, authConfig.secret, {
+  const token = jwt.sign({ userId: user.userId }, authConfig.secret, {
     expiresIn: 20000,
   });
   var responseUser = {

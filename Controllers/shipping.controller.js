@@ -23,19 +23,27 @@ exports.addAddress = async (req, res) => {
       city: req.body.city,
       state: req.body.state,
       zipCode: zipCode,
-      user: req.role,
+      userId: req.userId,
     };
 
     const createdAddress = await address.create(addAddressObj);
 
-    if (createdAddress) {
-      const user = await User.findOne({ role: req.role });
-      user.populate("userSchema");
-      await user.save();
-    }
-
     // Create the response object
-    return res.status(201).json(createdAddress);
+    const addressWithUser = {
+      _id: createdAddress._id,
+      name: createdAddress.name,
+      contactNumber: createdAddress.phone,
+      street: createdAddress.street,
+      landmark: createdAddress.landmark,
+      city: createdAddress.city,
+      state: createdAddress.state,
+      zipCode: createdAddress.zipCode,
+      createdAt: createdAddress.createdAt,
+      updatedAt: createdAddress.updatedAt,
+      user: req.userId, // Attach user information to the response
+    };
+
+    return res.status(201).json(addressWithUser);
   } catch (err) {
     console.error(err);
     return res.status(500).json({ message: "Error while adding address" });
