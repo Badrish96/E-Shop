@@ -29,3 +29,4 @@ db.once("open", () => {
 require("./Routes/auth.route")(app);
 require("./Routes/address.routes")(app);
 require("./Routes/product.route")(app);
+require("./Routes/order.routes")(app);

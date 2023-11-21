@@ -16,6 +16,7 @@ exports.addAddress = async (req, res) => {
     }
 
     const addAddressObj = {
+      addressId: req.body.addressId,
       name: req.body.name,
       phone: contactNumber,
       street: req.body.street,
@@ -23,14 +24,15 @@ exports.addAddress = async (req, res) => {
       city: req.body.city,
       state: req.body.state,
       zipCode: zipCode,
-      userId: req.userId,
     };
 
     const createdAddress = await address.create(addAddressObj);
 
+    const userInfo = await User.findOne({ userId: req.userId });
+
     // Create the response object
     const addressWithUser = {
-      _id: createdAddress._id,
+      addressId: createdAddress.addressId,
       name: createdAddress.name,
       contactNumber: createdAddress.phone,
       street: createdAddress.street,
@@ -40,7 +42,7 @@ exports.addAddress = async (req, res) => {
       zipCode: createdAddress.zipCode,
       createdAt: createdAddress.createdAt,
       updatedAt: createdAddress.updatedAt,
-      user: req.userId, // Attach user information to the response
+      user: userInfo, // Attach user information to the response
     };
 
     return res.status(201).json(addressWithUser);

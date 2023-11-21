@@ -35,10 +35,20 @@ isAdmin = async (req, res, next) => {
     });
   }
 };
-
+isUser = async (req, res, next) => {
+  const user = await userModel.findOne({ userId: req.userId });
+  if (user && user.userRole == constants.userType.user) {
+    next();
+  } else {
+    return res.status(403).send({
+      message: "You are not authorized to access this endpoint!",
+    });
+  }
+};
 const authFunction = {
   verifyToken: verifyToken,
   isAdmin: isAdmin,
+  isUser: isUser,
 };
 
 module.exports = authFunction;
