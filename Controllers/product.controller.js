@@ -155,6 +155,7 @@ exports.updateProductInfo = async (req, res) => {
     const updatedProduct = await product.save();
     return res.status(200).send(updatedProduct);
   } catch (err) {
+    console.log(err);
     res.status(500).send({
       message: "Some error occurred while updating Product",
     });

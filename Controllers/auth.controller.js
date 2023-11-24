@@ -78,7 +78,7 @@ exports.signin = async (req, res) => {
       message: "Invalid Credentials!",
     });
   }
-
+  //Fetching user info from jwt token
   const token = jwt.sign({ userId: user.userId }, authConfig.secret, {
     expiresIn: 20000,
   });

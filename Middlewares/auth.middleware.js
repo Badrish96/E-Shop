@@ -7,7 +7,7 @@ const constants = require("../Utils/constants");
 
 verifyToken = (req, res, next) => {
   let token = req.headers["x-auth-token"];
-
+  //Token Check
   if (!token) {
     return res.status(404).send({
       message: "No token provided!",
@@ -23,7 +23,7 @@ verifyToken = (req, res, next) => {
     next();
   });
 };
-
+//Checking if user id Admin or not
 isAdmin = async (req, res, next) => {
   const user = await userModel.findOne({ userId: req.userId });
 
@@ -35,6 +35,7 @@ isAdmin = async (req, res, next) => {
     });
   }
 };
+//Check for User
 isUser = async (req, res, next) => {
   const user = await userModel.findOne({ userId: req.userId });
   if (user && user.userRole == constants.userType.user) {

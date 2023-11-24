@@ -1,3 +1,4 @@
+//UserType Constants
 module.exports = {
   userType: {
     user: "USER",

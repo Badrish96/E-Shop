@@ -25,7 +25,7 @@ db.on("error", () => {
 db.once("open", () => {
   console.log("Connected to DB");
 });
-
+//Routes
 require("./Routes/auth.route")(app);
 require("./Routes/address.routes")(app);
 require("./Routes/product.route")(app);
