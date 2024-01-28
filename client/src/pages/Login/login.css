@@ -2,6 +2,11 @@
   width: 100%;
 }
 
+.web_logo {
+  width: 120px;
+  height: 120px;
+}
+
 .logo_text {
   position: absolute;
   margin-top: 67px;

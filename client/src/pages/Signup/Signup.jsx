@@ -1,6 +1,6 @@
 import React from "react";
 import signup_banner from "../../images/signup_banner.png";
-import logo_text from "../../images/Logo + Text.png";
+import logo_text from "../../images/e-shop-high-resolution-logo-black.png";
 import "./signup.css";
 export default function Signup() {
   return (

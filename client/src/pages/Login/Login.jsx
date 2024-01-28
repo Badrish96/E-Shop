@@ -1,6 +1,6 @@
 import React from "react";
 import login_banner from "../../images/login_banner.png";
-import logo_text from "../../images/Logo + Text.png";
+import logo_text from "../../images/e-shop-high-resolution-logo-black.png";
 import { useNavigate } from "react-router-dom";
 import "./login.css";
 export default function Login() {
@@ -10,13 +10,17 @@ export default function Login() {
     navigate("/forgot");
   };
 
+  const handleLogin = () => {
+    navigate("/home");
+  };
+
   return (
     <div className="container-fluid">
       <div className="row">
         <div className="col-6">
           <div className="login_banner">
             <div className="logo_text">
-              <img src={logo_text} alt="Logo text" />
+              <img src={logo_text} alt="Logo text" className="web_logo" />
             </div>
             <img
               src={login_banner}
@@ -49,7 +53,7 @@ export default function Login() {
                   </a>
                 </div>
               </div>
-              <button>Login</button>
+              <button onClick={handleLogin}>Login</button>
             </form>
           </div>
         </div>
