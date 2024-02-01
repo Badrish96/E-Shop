@@ -1,4 +1,51 @@
 .navbar_logo {
-  width: 60px;
-  height: 60px;
+  width: 80px;
+  height: 80px;
+  margin-left: 50px;
+}
+
+.dropdown-menu {
+  padding: 35px;
+}
+
+.dropdown-menu li {
+  list-style: none;
+}
+
+.submenu {
+  padding: 20px 0px;
+}
+
+.submenu li {
+  padding: 10px 0px;
+}
+
+.login_btn {
+  background-color: black;
+  color: white;
+  padding: 5px 20px;
+  margin-right: 40px;
+}
+
+.login_btn:hover {
+  background-color: white;
+  color: black;
+  padding: 5px 20px;
+  border: 1px solid black;
+}
+
+.nav_bar_items {
+  margin-left: 300px;
+}
+
+.nav_bar_icons {
+  margin-top: 5px;
+  margin-right: 35px;
+  cursor: pointer;
+}
+
+.search_input {
+  width: 200px;
+  height: 35px;
+  border-radius: 10px;
 }
