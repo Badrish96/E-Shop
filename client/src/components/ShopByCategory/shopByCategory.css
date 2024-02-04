@@ -1,9 +1,50 @@
 .category_heading {
   margin-top: 50px;
 }
-
-.category_slider {
-  width: 200px;
-  height: 200px;
+.slider-container {
   margin-top: 50px;
+}
+.category_slider img {
+  width: 300px;
+  height: 400px;
+  border-radius: 10px;
+}
+
+.category_btn {
+  background-color: rgba(255, 255, 255, 0.76);
+  color: black;
+  padding: 10px 20px;
+  border-radius: 10px;
+  border: none;
+  position: relative;
+  bottom: 60px;
+  left: 70px;
+}
+
+.category_btn:hover {
+  background-color: rgba(0, 0, 0, 0.76);
+  color: white;
+}
+
+.slick-prev {
+  position: relative !important;
+  left: 1180px !important;
+  bottom: 95px !important;
+}
+
+.slick-next {
+  position: relative !important;
+  left: 1255px !important;
+  bottom: 558px !important;
+}
+
+.slider_arrow {
+  padding: 10px 15px;
+  border-radius: 25%;
+  border: none;
+}
+
+.slider_arrow:hover {
+  background-color: black;
+  color: white;
 }

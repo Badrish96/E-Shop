@@ -18,7 +18,7 @@ export default function ImageBanner() {
             <div className="slider_text">
               <h5>Classic Exclusive</h5>
               <h3>{"Women's Collection"}</h3>
-              <span>Upto 40% OFF</span>
+              <p>Upto 40% OFF</p>
               <div className="shop_btn">
                 <button>
                   Shop Now <ArrowForwardIcon />
@@ -35,7 +35,7 @@ export default function ImageBanner() {
             <div className="slider_text">
               <h3>Top Brands</h3>
               <h5>{"Men's Collection"}</h5>
-              <span>Upto 20% OFF</span>
+              <p>Upto 20% OFF</p>
               <div className="shop_btn">
                 <button>
                   Shop Now <ArrowForwardIcon />
@@ -52,7 +52,7 @@ export default function ImageBanner() {
             <div className="slider_text">
               <h3>Summer Collection</h3>
               <h5>{"New Arrivals"}</h5>
-              <span>OFF ON TOP BRANDS</span>
+              <p>OFF ON TOP BRANDS</p>
               <div className="shop_btn">
                 <button>
                   Shop Now <ArrowForwardIcon />
