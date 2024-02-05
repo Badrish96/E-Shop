@@ -1,0 +1,51 @@
+.review_heading {
+  margin-top: 125px;
+  margin-bottom: 50px;
+}
+
+.user_profile_pic img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.user {
+  display: flex;
+  margin-top: 25px;
+}
+
+.review_text {
+  margin: 10px 0px;
+}
+
+.review_stars {
+  margin-top: -10px;
+}
+
+.review_arrow {
+  position: relative;
+  bottom: 510px;
+  right: 25px;
+  padding: 10px 15px;
+  border-radius: 25%;
+  border: none;
+}
+
+.review_arrow_back {
+  position: relative;
+  bottom: 240px;
+  right: 10px;
+  padding: 10px 15px;
+  border-radius: 25%;
+  border: none;
+}
+
+.username {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.user_role {
+  font-size: 12px;
+}

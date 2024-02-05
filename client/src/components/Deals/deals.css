@@ -1,12 +1,46 @@
 .deals_banner_img img {
-  width: 600px;
-  height: 400px;
+  width: 500px;
+  height: 450px;
 }
 
 .deals {
-  margin-top: 50px;
+  margin-top: 125px;
+}
+
+.deals_heading {
+  margin-top: 65px;
 }
 
 .countdown {
   margin-top: 30px;
+  display: flex;
+}
+
+.timer {
+  border: 1px solid rgb(169, 166, 166);
+  padding: 5px 15px;
+  border-radius: 10px;
+  margin-left: 10px;
+}
+
+.timer div {
+  font-size: 14px;
+}
+
+.timer_value {
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.view_product_btn {
+  background-color: black;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 10px;
+  margin-top: 50px;
+}
+
+.view_product_btn:hover {
+  background-color: white;
+  color: black;
 }

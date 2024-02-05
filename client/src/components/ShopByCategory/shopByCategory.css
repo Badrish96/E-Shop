@@ -28,13 +28,13 @@
 
 .slick-prev {
   position: relative !important;
-  left: 1180px !important;
+  left: 1125px !important;
   bottom: 95px !important;
 }
 
 .slick-next {
   position: relative !important;
-  left: 1255px !important;
+  left: 1210px !important;
   bottom: 558px !important;
 }
 
@@ -47,4 +47,10 @@
 .slider_arrow:hover {
   background-color: black;
   color: white;
+}
+
+.review_card {
+  width: 372px !important;
+  height: 250px;
+  padding: 25px;
 }

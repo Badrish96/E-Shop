@@ -1,0 +1,14 @@
+.footer {
+  background-color: rgba(0, 0, 0, 0.763);
+}
+
+.footer_logo {
+  margin-top: 100px;
+}
+
+.footer_logo img {
+  width: 100px;
+  height: 100px;
+  margin-left: 50px;
+  margin-top: 50px;
+}

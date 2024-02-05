@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import deals_banner from "../../images/deal_banner.jpg";
 import "./deals.css";
+import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 
 export default function Deals() {
   const [countdown, setCountdown] = useState({
@@ -38,7 +39,7 @@ export default function Deals() {
     <div className="container">
       <div className="deals">
         <div className="row">
-          <div className="col-6">
+          <div className="col-7">
             <div className="deals_heading">
               <h3>Deals of the Month</h3>
               <span>
@@ -49,14 +50,30 @@ export default function Deals() {
                 our chic Gift Cards.
               </span>
               <div className="countdown">
-                <span>{countdown.days} Days</span>
-                <span>{countdown.hours} Hours</span>
-                <span>{countdown.minutes} Minutes</span>
-                <span>{countdown.seconds} Seconds</span>
+                <div className="timer">
+                  <span className="timer_value">{countdown.days}</span>{" "}
+                  <div>Days</div>
+                </div>
+                <div className="timer">
+                  <span className="timer_value">{countdown.hours}</span>
+                  <div>Hours</div>
+                </div>
+                <div className="timer">
+                  <span className="timer_value">{countdown.minutes}</span>
+                  <div>Mins</div>
+                </div>
+                <div className="timer">
+                  <span className="timer_value">{countdown.seconds}</span>
+                  <div>Secs</div>
+                </div>
               </div>
+              <button className="view_product_btn">
+                View All Products
+                <ArrowForwardIcon />
+              </button>
             </div>
           </div>
-          <div className="col-6">
+          <div className="col-5">
             <div className="deals_banner_img">
               <img src={deals_banner} alt="Deals Banner" />
             </div>

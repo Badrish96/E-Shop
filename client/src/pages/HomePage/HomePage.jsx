@@ -5,6 +5,9 @@ import ImageBanner from "../../components/ImageBanner/ImageBanner";
 import ShopByCategory from "../../components/ShopByCategory/ShopByCategory";
 import BestSeller from "../../components/BestSeller/BestSeller";
 import Deals from "../../components/Deals/Deals";
+import Reviews from "../../components/Reviews/Reviews";
+import InstaStories from "../../components/Instagram/InstaStories";
+import Footer from "../../components/Footer/Footer";
 export default function HomePage() {
   return (
     <div>
@@ -13,6 +16,9 @@ export default function HomePage() {
       <ShopByCategory />
       <BestSeller />
       <Deals />
+      <Reviews />
+      <InstaStories />
+      <Footer />
     </div>
   );
 }
