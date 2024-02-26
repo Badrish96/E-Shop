@@ -1,8 +1,5 @@
 .footer {
-  background-color: rgba(0, 0, 0, 0.763);
-}
-
-.footer_logo {
+  background-color: black;
   margin-top: 100px;
 }
 
@@ -10,5 +7,70 @@
   width: 100px;
   height: 100px;
   margin-left: 50px;
+  margin-bottom: 25px;
+  margin-top: 25px;
+}
+
+.contact_details ul {
+  list-style: none;
+  color: white;
+  font-size: 12px;
+}
+
+.contact_info {
+  padding-left: 10px;
+}
+
+.state {
+  margin-left: 34px;
+}
+
+.footer_icons {
+  margin-bottom: 5px;
+  margin-top: 5px;
+}
+
+.information_section {
   margin-top: 50px;
+}
+
+.information_section span {
+  color: white;
+  font-weight: bold;
+}
+
+.information_section ul {
+  list-style: none;
+  color: white;
+  font-size: 14px;
+  padding-left: 0px;
+}
+
+.information_section li {
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.subscribe_text {
+  font-size: 14px;
+  color: white;
+  margin-top: 25px;
+}
+
+.email_input {
+  margin-top: 25px;
+}
+
+.email_input input {
+  background-color: black;
+  padding: 10px 40px;
+  border-radius: 10px;
+  color: white;
+  margin-left: -25px;
+}
+
+.footer_sections hr {
+  color: white;
+  width: 95%;
+  margin-left: 50px;
 }

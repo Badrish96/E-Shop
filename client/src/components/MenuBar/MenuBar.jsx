@@ -98,26 +98,30 @@ export default function MenuBar() {
                 >
                   Shop
                 </a>
-                <ul className="dropdown-menu">
-                  {menuItems.map((menuItem, index) => (
-                    <li key={index}>
-                      <a className="dropdown-item" href="#">
-                        {menuItem.label}
-                      </a>
-                      {menuItem.subItems.length > 0 && (
-                        <ul className="submenu">
-                          {menuItem.subItems.map((subItem, subIndex) => (
-                            <li key={subIndex}>
-                              <a className="dropdown-item" href="#">
-                                {subItem}
-                              </a>
-                            </li>
-                          ))}
-                        </ul>
-                      )}
-                    </li>
-                  ))}
-                </ul>
+                <div>
+                  <ul className="dropdown-menu">
+                    <div className="shop_dropdown">
+                      {menuItems.map((menuItem, index) => (
+                        <li key={index}>
+                          <a className="dropdown-item" href="#">
+                            {menuItem.label}
+                          </a>
+                          {menuItem.subItems.length > 0 && (
+                            <ul className="submenu">
+                              {menuItem.subItems.map((subItem, subIndex) => (
+                                <li key={subIndex}>
+                                  <a className="dropdown-item" href="#">
+                                    {subItem}
+                                  </a>
+                                </li>
+                              ))}
+                            </ul>
+                          )}
+                        </li>
+                      ))}
+                    </div>
+                  </ul>
+                </div>
               </li>
               <li className="nav-item">
                 <a className="nav-link active" aria-current="page" href="#">

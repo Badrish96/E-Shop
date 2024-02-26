@@ -4,6 +4,10 @@
   margin-left: 50px;
 }
 
+.shop_dropdown {
+  display: flex;
+}
+
 .dropdown-menu {
   padding: 35px;
 }
