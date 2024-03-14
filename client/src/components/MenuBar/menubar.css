@@ -47,6 +47,27 @@
   margin-right: 35px;
   cursor: pointer;
 }
+.person_icon {
+  margin-top: 5px;
+  margin-left: -20px;
+  cursor: pointer;
+}
+.profile_btn {
+  border: none;
+  background-color: #ffff;
+}
+
+.dropdown-menu[data-bs-popper] {
+  top: 70%;
+  right: 0px;
+  left: 88%;
+  width: 5%;
+}
+
+.dropdown-menu {
+  padding: 0px;
+  font-size: 14px;
+}
 
 .search_input {
   width: 200px;

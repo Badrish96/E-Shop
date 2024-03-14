@@ -3,8 +3,15 @@
 const serverConfig = require("./Configs/server.config");
 const dbConfig = require("./Configs/db.config");
 const express = require("express");
+const cors = require("cors");
+
 const app = express();
 app.use(express.json());
+const corsOptions = {
+  origin: "http://localhost:5173",
+};
+
+app.use(cors(corsOptions));
 
 const mongoose = require("mongoose");
 

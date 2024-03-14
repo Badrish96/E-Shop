@@ -6,6 +6,7 @@ import ForgotPassword from "./components/ForgotPass/ForgotPassword";
 import EnterOtp from "./components/EnterOTP/EnterOtp";
 // import HomePage from "./pages/HomePage/HomePage";
 import { lazy, Suspense } from "react";
+import Checkout from "./pages/Checkout/Checkout";
 const LazyHomePage = lazy(() => import("./pages/HomePage/HomePage"));
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
               </Suspense>
             }
           />
+          <Route path="/checkout" element={<Checkout />} />
         </Routes>
       </BrowserRouter>
     </>

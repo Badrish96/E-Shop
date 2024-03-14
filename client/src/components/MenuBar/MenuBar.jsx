@@ -1,9 +1,12 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./menubar.css";
 import logo from "../../images/e-shop-high-resolution-logo-black.png";
 import SearchIcon from "@mui/icons-material/Search";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import LocalMallOutlinedIcon from "@mui/icons-material/LocalMallOutlined";
+import { useNavigate } from "react-router-dom";
+import PersonIcon from "@mui/icons-material/Person";
+
 const menuItems = [
   {
     label: "Men",
@@ -59,9 +62,23 @@ const menuItems = [
 
 export default function MenuBar() {
   const [isSearchVisible, setSearchVisible] = useState(false);
+  const token = window.localStorage.getItem("accessToken");
+
+  const navigate = useNavigate();
 
   const handleSearch = () => {
     setSearchVisible(!isSearchVisible);
+  };
+
+  const handleLoginBtn = () => {
+    navigate("/");
+  };
+
+  const handleLogoutBtn = () => {
+    window.localStorage.removeItem("accessToken");
+  };
+  const handleCheckout = () => {
+    navigate("/checkout");
   };
   return (
     <div className="container-fluid">
@@ -146,14 +163,51 @@ export default function MenuBar() {
               <div onClick={handleSearch} className="nav_bar_icons">
                 <SearchIcon />
                 <FavoriteBorderIcon sx={{ marginLeft: "10px" }} />
-                <LocalMallOutlinedIcon sx={{ marginLeft: "10px" }} />
+                <span onClick={handleCheckout}>
+                  <LocalMallOutlinedIcon sx={{ marginLeft: "10px" }} />
+                </span>
               </div>
-              <button
-                className="btn btn-outline-success login_btn"
-                type="submit"
-              >
-                Login
-              </button>
+              {/* Conditional rendering based on token presence */}
+              {token ? (
+                <div>
+                  <button
+                    className="dropdown-toggle profile_btn"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                  >
+                    <PersonIcon className="person_icon" />
+                  </button>
+                  <ul className="dropdown-menu">
+                    <li>
+                      <a className="dropdown-item" href="#">
+                        Profile
+                      </a>
+                    </li>
+                    <li>
+                      <a className="dropdown-item" href="#">
+                        Settings
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        className="dropdown-item"
+                        href="#"
+                        onClick={handleLogoutBtn}
+                      >
+                        Logout
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              ) : (
+                <button
+                  className="btn btn-outline-success login_btn"
+                  type="submit"
+                  onClick={handleLoginBtn}
+                >
+                  Login
+                </button>
+              )}
             </form>
           </div>
         </div>
