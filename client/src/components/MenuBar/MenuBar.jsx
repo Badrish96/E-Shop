@@ -80,6 +80,11 @@ export default function MenuBar() {
   const handleCheckout = () => {
     navigate("/checkout");
   };
+
+  const handleHomeBtn = () => {
+    navigate("/home");
+  };
+
   return (
     <div className="container-fluid">
       <nav className="navbar navbar-expand-lg bg-body-tertiary">
@@ -101,7 +106,12 @@ export default function MenuBar() {
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0 nav_bar_items">
               <li className="nav-item">
-                <a className="nav-link active" aria-current="page" href="#">
+                <a
+                  className="nav-link active"
+                  aria-current="page"
+                  href="#"
+                  onClick={handleHomeBtn}
+                >
                   Home
                 </a>
               </li>

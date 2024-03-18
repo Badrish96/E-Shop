@@ -78,12 +78,27 @@ exports.findAllProducts = async (req, res) => {
 
 exports.getProductCategory = async (req, res) => {
   try {
-    const getCategory = await Product.distinct("category");
+    const distinctProducts = await Product.aggregate([
+      {
+        $group: {
+          _id: "$category",
+          product: { $first: "$$ROOT" },
+          imageUrl: { $first: "$imageUrl" }, // Include imageUrl in the grouping
+        },
+      },
+    ]);
 
-    res.status(200).send(getCategory);
+    // Transform the response to include only necessary fields
+    const transformedData = distinctProducts.map((product) => ({
+      category: product._id,
+      imageUrl: product.imageUrl,
+    }));
+
+    res.status(200).send(transformedData);
   } catch (err) {
     res.status(500).send({
       message: "Some error occurred while fetching Categories",
+      error: err,
     });
   }
 };

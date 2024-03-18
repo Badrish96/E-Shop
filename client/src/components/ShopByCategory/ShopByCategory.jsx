@@ -1,57 +1,15 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./shopByCategory.css";
-import category_img1 from "../../images/category_img1.jpg";
-import category_img2 from "../../images/category_img2.jpg";
-import category_img3 from "../../images/category_img3.jpg";
-import category_img4 from "../../images/redshirt.png";
-import category_img5 from "../../images/Urban shirts.png";
-import category_img6 from "../../images/shortswomen.png";
-import category_img7 from "../../images/Tracksuit.png";
-import category_img8 from "../../images/signup_banner.png";
-import category_img9 from "../../images/Women pink hoodie.png";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-const data = [
-  {
-    img: category_img1,
-    BtnText: "Casual Wear",
-  },
-  {
-    img: category_img2,
-    BtnText: "Winter Wear",
-  },
-  {
-    img: category_img3,
-    BtnText: "Women Collection",
-  },
-  {
-    img: category_img4,
-    BtnText: "Casual Shirts",
-  },
-  {
-    img: category_img5,
-    BtnText: "Winter Wear",
-  },
-  {
-    img: category_img6,
-    BtnText: "Summer Wear",
-  },
-  {
-    img: category_img7,
-    BtnText: "Top Brands",
-  },
-  {
-    img: category_img8,
-    BtnText: "On Discount",
-  },
-  {
-    img: category_img9,
-    BtnText: "Hoodies",
-  },
-];
+import { useDispatch, useSelector } from "react-redux";
+import {
+  selectCategory,
+  fetchProductCategory,
+} from "../../Slices/productCategorySlice";
 
 function SampleNextArrow(props) {
   // eslint-disable-next-line react/prop-types
@@ -98,6 +56,13 @@ function SamplePrevArrow(props) {
 }
 
 export default function ShopByCategory() {
+  const dispatch = useDispatch();
+  const categories = useSelector(selectCategory);
+
+  useEffect(() => {
+    dispatch(fetchProductCategory());
+  }, [dispatch]);
+
   const settings = {
     infinite: true,
     speed: 500,
@@ -114,13 +79,13 @@ export default function ShopByCategory() {
       <div className="row">
         <div className="slider-container">
           <Slider {...settings}>
-            {data.map((d) => (
-              <div key={d.BtnText} className="col-4 category_slider">
+            {categories.map((category, index) => (
+              <div key={index} className="col-4 category_slider">
                 <div>
-                  <img src={d.img} alt="category" />
+                  <img src={category.imageUrl} alt="category" />
                 </div>
                 <div>
-                  <button className="category_btn">{d.BtnText}</button>
+                  <button className="category_btn">{category.category}</button>
                 </div>
               </div>
             ))}

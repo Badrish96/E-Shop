@@ -2,6 +2,103 @@
   margin-top: 50px;
 }
 
+.checkout_heading h4 {
+  font-size: 35px;
+}
+.order_cart {
+  margin-top: 50px;
+}
 .sub_heading {
+  width: 100%;
+}
+
+.order_amt {
   display: flex;
+  justify-content: space-evenly;
+  font-weight: bold;
+  margin-top: 20px;
+}
+
+.order_amt h6 {
+  font-weight: bold;
+}
+tbody,
+td,
+tfoot,
+th,
+thead,
+tr {
+  padding: 10px 0;
+}
+.product_img img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+}
+
+.product_img {
+  position: relative;
+}
+
+.product_info span {
+  font-size: 14px;
+  font-weight: bold;
+  margin-left: 20px;
+}
+
+.product_size {
+  display: block;
+  position: absolute;
+  left: 60px;
+}
+
+.qty_btn {
+  padding: 5px 25px;
+  border-radius: 10px;
+}
+.apply_coupon {
+  margin-left: 95px;
+  margin-top: 15px;
+}
+.apply_coupon label {
+  font-size: 12px;
+}
+
+.apply_coupon_btn input {
+  padding: 13px 5px;
+  border-radius: 10px 0px 0px 10px;
+}
+
+.apply_coupon_btn button {
+  padding: 15px 20px;
+  border-radius: 0px 10px 10px 0px;
+  font-size: 14px;
+  background-color: #000;
+  color: #fff;
+}
+
+.delivery {
+  display: flex;
+  justify-content: space-around;
+  margin-left: 40px;
+  margin-top: 15px;
+  font-size: 14px;
+}
+
+.order_total {
+  display: flex;
+  justify-content: space-around;
+  margin-left: 40px;
+  margin-top: 15px;
+  font-size: 14px;
+  font-weight: bold;
+  padding: 10px 0px;
+}
+
+.checkout_btn {
+  padding: 15px 60px;
+  border-radius: 10px;
+  margin-left: 100px;
+  background-color: #000;
+  color: #ffff;
 }
