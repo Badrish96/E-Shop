@@ -7,4 +7,9 @@ module.exports = function (app) {
     authMiddleware.verifyToken,
     cartController.addToCart
   );
+  app.get(
+    "/eshop/api/v1/auth/getcartdata",
+    authMiddleware.verifyToken,
+    cartController.getCartData
+  );
 };

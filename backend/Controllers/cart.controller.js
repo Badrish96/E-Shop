@@ -35,3 +35,24 @@ exports.addToCart = async (req, res) => {
     });
   }
 };
+
+exports.getCartData = async (req, res) => {
+  try {
+    const cartData = await Cart.find({});
+
+    // Mapping the retrieved data to extract necessary fields
+    const responseData = cartData.map((item) => ({
+      description: item.description,
+      quantity: item.quantity,
+      imageUrl: item.imageUrl,
+      price: item.price,
+    }));
+
+    // Sending the response with the extracted data
+    res.status(200).send(responseData);
+  } catch (err) {
+    res.status(500).send({
+      message: `${err} occurred while getting cart data`,
+    });
+  }
+};

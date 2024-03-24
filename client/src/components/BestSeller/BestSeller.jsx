@@ -2,9 +2,11 @@ import React, { useState, useEffect } from "react";
 import "./bestSeller.css";
 import { useDispatch, useSelector } from "react-redux";
 import { selectProduct, fetchProducts } from "../../Slices/productSlice";
-import StarBorderIcon from "@mui/icons-material/StarBorder";
 import SwapHorizIcon from "@mui/icons-material/SwapHoriz";
 import VisibilityIcon from "@mui/icons-material/Visibility";
+import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
+import { addItemToCart } from "../../Slices/cartSlice";
+
 export default function BestSeller() {
   const [hoveredItem, setHoveredItem] = useState(null);
   const dispatch = useDispatch();
@@ -20,6 +22,10 @@ export default function BestSeller() {
 
   const onMouseLeave = () => {
     setHoveredItem(null);
+  };
+
+  const handleAddToCart = (productId) => {
+    dispatch(addItemToCart(productId, 1)); // Assuming quantity is always 1
   };
 
   return (
@@ -40,7 +46,7 @@ export default function BestSeller() {
                   <div className="add_to_cart">
                     <div className="image_icons">
                       <div className="icons">
-                        <StarBorderIcon
+                        <FavoriteBorderIcon
                           sx={{
                             fontSize: "1.3rem",
                             marginLeft: "4px",
@@ -67,7 +73,12 @@ export default function BestSeller() {
                         />
                       </div>
                     </div>
-                    <button className="add_to_cart_btn">Add to Cart</button>
+                    <button
+                      className="add_to_cart_btn"
+                      onClick={() => handleAddToCart(product._id)}
+                    >
+                      Add to Cart
+                    </button>
                   </div>
                 )}
               </div>
