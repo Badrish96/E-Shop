@@ -6,12 +6,12 @@ import SwapHorizIcon from "@mui/icons-material/SwapHoriz";
 import VisibilityIcon from "@mui/icons-material/Visibility";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import { addItemToCart } from "../../Slices/cartSlice";
-
+import { useNavigate } from "react-router-dom";
 export default function BestSeller() {
   const [hoveredItem, setHoveredItem] = useState(null);
   const dispatch = useDispatch();
   const products = useSelector(selectProduct);
-
+  const navigate = useNavigate();
   useEffect(() => {
     dispatch(fetchProducts());
   }, [dispatch]);
@@ -27,7 +27,9 @@ export default function BestSeller() {
   const handleAddToCart = (productId) => {
     dispatch(addItemToCart(productId, 1)); // Assuming quantity is always 1
   };
-
+  const productPage = () => {
+    navigate("/product");
+  };
   return (
     <div className="container">
       <div className="bestseller_heading">
@@ -41,7 +43,11 @@ export default function BestSeller() {
                 onMouseEnter={() => onHoverAddToCart(product.productId)}
                 onMouseLeave={onMouseLeave}
               >
-                <img src={product.imageUrl} alt="bestseller_img" />
+                <img
+                  src={product.imageUrl}
+                  alt="bestseller_img"
+                  onClick={productPage}
+                />
                 {hoveredItem === product.productId && (
                   <div className="add_to_cart">
                     <div className="image_icons">
@@ -82,10 +88,13 @@ export default function BestSeller() {
                   </div>
                 )}
               </div>
-              <div className="bestseller_text title">
+              <div className="bestseller_text title" onClick={productPage}>
                 <span>{product.manufacturer}</span>
               </div>
-              <div className="bestseller_text description">
+              <div
+                className="bestseller_text description"
+                onClick={productPage}
+              >
                 <span>{product.description}</span>
               </div>
               <div className="bestseller_text price">

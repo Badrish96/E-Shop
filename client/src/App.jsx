@@ -4,7 +4,7 @@ import Signup from "./pages/Signup/Signup";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import ForgotPassword from "./components/ForgotPass/ForgotPassword";
 import EnterOtp from "./components/EnterOTP/EnterOtp";
-// import HomePage from "./pages/HomePage/HomePage";
+import ProductPage from "./pages/Product/Product";
 import { lazy, Suspense } from "react";
 import Checkout from "./pages/Checkout/Checkout";
 const LazyHomePage = lazy(() => import("./pages/HomePage/HomePage"));
@@ -25,6 +25,7 @@ function App() {
             }
           />
           <Route path="/checkout" element={<Checkout />} />
+          <Route path="/product" element={<ProductPage />} />
         </Routes>
       </BrowserRouter>
     </>
